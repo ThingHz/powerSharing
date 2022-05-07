@@ -1,0 +1,49 @@
+package powerBankReturnPackage;
+syntax = "proto3";
+
+/*message Report {
+  int32 rl_count = 1;
+  int32 rl_netmode = 2;
+  int32 rl_conn = 3;
+  int32 rl_csq = 4;
+  int32 rl_rsrp = 5;
+  int32 rl_sinr = 6;
+  int32 rl_wifi = 7;
+  string rl_commsoftver = 8;
+  string rl_commhardver = 9;
+  string rl_iccid = 10;
+  int32 rl_seq = 11;
+}*/
+/*message Report {
+  int32 rl_count = 1;
+  int32 rl_netmode = 2;
+  int32 rl_conn = 3;
+  int32 rl_csq = 4;
+  int32 rl_rsrp = 5;
+  int32 rl_sinr = 6;
+  int32 rl_wifi = 7;
+  string rl_commsoftver = 8;
+  string rl_commhardver = 9;
+  string rl_iccid = 10;
+  int32 rl_seq = 11;
+}*/
+
+/*message Report {
+  int32 slot = 1;
+  int32 rl_lock = 2;
+  int32 rl_bottom = 3;
+  int32 rl_pdid = 4;
+  int32 rl_qoe = 5;
+  int32 rl_vol = 6;
+  int32 rl_cur = 7;
+  int32 rl_tmp = 8;
+  int32 rl_limited = 9;
+  int32 rl_code = 10;
+  int32 rl_seq = 11;
+}*/
+
+message Report {
+  int32 rl_slot = 1;
+  int32 rl_result = 2;
+  int32 rl_seq = 3;
+}

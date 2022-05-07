@@ -1,0 +1,20 @@
+{
+  "name": "erzhan-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "erzhan-cabinate-login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "path": "^0.12.7",
+    "protobufjs": "^6.11.2",
+    "sequelize": "^6.17.0",
+    "serverless-offline": "^8.5.0"
+  }
+}

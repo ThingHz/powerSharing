@@ -1,0 +1,82 @@
+service: erzhan-project
+frameworkVersion: '2'
+
+plugins:
+  - serverless-offline
+  #- serverless-iot-offline
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  allowedHeaders:
+    - Accept
+    - Content-Type
+    - Content-Length
+    - Authorization
+    - X-Amz-Date
+    - X-Api-Key
+    - X-Amz-Security-Token
+    - X-Amz-User-Agent
+  
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: prod
+  region: eu-central-1
+  memorySize: 128
+  timeout: 5
+  endpointType: regional
+  
+
+functions:
+  erzhanSubscribe2:
+    handler: erzhan-subscribe2.handler
+    description: iot events cabinate report /report/22 
+    events:
+      - iot:
+          sql: "select encode(*,'base64') as pi from 'cabinet/+/report/22'"
+          sqlVersion: "beta"
+
+
+  erzhanCabinateLogin:
+    handler: erzhan-cabinate-login.handler
+    description: iot events cabinate report /report/10 
+    events:
+      - iot:
+          sql: "select encode(*,'base64') as pi from 'cabinet/+/report/10'"
+          sqlVersion: "beta"
+
+  
+  erzhanCabinateReportAll:
+    handler: erzhan-cabinate-report-all.handler
+    description: iot events cabinate report /report/# 
+    events:
+      - iot:
+          sql: "select encode(*,'base64') as pi from 'cabinet/+/report/#'"
+          sqlVersion: "beta"
+
+
+
+  erzhanCabinateReply:
+    handler: erzhan-reply-return-powerbank.handler
+    description: iot events cabinate report /cmd/22 
+    events:
+      - iot:
+          sql: "select encode(*,'base64') as pi from 'cabinet/+/cmd/22'"
+          sqlVersion: "beta"
+
+
+
+  erzhanArticles:
+    handler: erzhan-articles/erzhan-articles.handler
+    #description: iot events 
+    events:
+      - http:
+          path: articles
+          method: get
+          request:
+            parameters:
+              querystrings:
+                slug: false
+          cors:
+            origin: '*'
+            headers: ${self:custom.allowedHeaders}

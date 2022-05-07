@@ -1,0 +1,16 @@
+package reportpackage;
+syntax = "proto3";
+
+message Report {
+  int32 rlCount = 1;
+  int32 rlNetmode = 2;
+  int32 rlConn = 3;
+  int32 rlCsq = 4;
+  int32 rlRsrp = 5;
+  int32 rlSinr = 6;
+  int32 rlWifi = 7;
+  string rlCommsoftver = 8;
+  string rlCommhardver = 9;
+  string rlIccid = 10;
+  int32 rlSeq = 11;
+}

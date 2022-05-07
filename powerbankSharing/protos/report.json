@@ -1,0 +1,56 @@
+{
+    "nested": {
+      "report": {
+        "nested": {
+          "Report": {
+            "fields": {
+              "rlCount": {
+                "type": "uint32",
+                "id": 1
+              },
+              "rlNetmode": {
+                "type": "uint32",
+                "id": 2
+              },
+              "rlConn": {
+                "type": "uint32",
+                "id": 3
+              },
+              "rlCsq": {
+                "type": "uint32",
+                "id": 4
+              },
+              "rlRsrp": {
+                "type": "uint32",
+                "id": 5
+              },
+              "rlSinr": {
+                "type": "uint32",
+                "id": 6
+              },
+              "rlWifi": {
+                "type": "uint32",
+                "id": 7
+              },
+              "rlCommsoftver": {
+                "type": "string",
+                "id": 8
+              },
+              "rlCommhardver": {
+                "type": "string",
+                "id": 9
+              },
+              "rlIccid": {
+                "type": "string",
+                "id": 10
+              },
+              "rlSeq": {
+                "type": "uint32",
+                "id": 11
+              }
+            }
+          }
+        }
+      }
+    }
+  }
